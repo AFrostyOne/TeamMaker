@@ -3,6 +3,7 @@ from copy import deepcopy
 
 
 def get_skill():
+    """Return the skill level entered by a user"""
     while True:
         try:
             skill = int(input(">"))
@@ -15,6 +16,7 @@ def get_skill():
 
 
 def show_players(players):
+    """Print the player and skill level from a dictionary."""
     print("Here are the current players:")
     for k, v in players.items():
         print("Player:", k)
@@ -22,6 +24,7 @@ def show_players(players):
 
 
 def add_player(players: list):
+    """Add new player to list of players."""
     while True:
         player = input("Player Name:")
         if player in players:
@@ -33,6 +36,7 @@ def add_player(players: list):
 
 
 def get_team_skills(teams: list):
+    """Return the total skill level of all players in a team."""
     team_skills = []
     for t in teams:
         team_skills.append(sum(t.values()))
@@ -40,6 +44,7 @@ def get_team_skills(teams: list):
 
 
 def assign_teams(players: dict, number_of_teams):
+    """Return a list of dictionaries based on the number of teams."""
     team1 = {}
     team2 = {}
     team3 = {}
@@ -64,6 +69,7 @@ def assign_teams(players: dict, number_of_teams):
 
 
 def assign_new_teams(teams: list):
+    """Remove one player from each team and randomly assign to a team."""
     switch_players = {}
     teams2 = deepcopy(teams)
     for t2 in teams2:
@@ -81,6 +87,7 @@ def assign_new_teams(teams: list):
 
 
 def show_teams(teams):
+    """Print the name and skill level of each player for each team."""
     i = 0
     for t in teams:
         i += 1
@@ -90,6 +97,7 @@ def show_teams(teams):
 
 
 def get_remixes(mininum: int, maximum: int):
+    """Ask user for number of remixes to use and return the answer."""
     print(f"Enter the number of reshuffles desired ({mininum}-{maximum})")
     while True:
         try:
